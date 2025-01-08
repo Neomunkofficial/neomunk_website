@@ -64,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
     Composite.add(world, [
       // Walls
-      Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 50, { isStatic: true }),
-      Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 50, {
+      Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 0.5, { isStatic: true }),
+      Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 0.5, {
         isStatic: true,
       }),
-      Bodies.rectangle(0, window.innerHeight / 2, 50, window.innerHeight, { isStatic: true }),
-      Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 50, window.innerHeight, {
+      Bodies.rectangle(0, window.innerHeight / 2,0.5, window.innerHeight, { isStatic: true }),
+      Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 0.5, window.innerHeight, {
         isStatic: true,
       }),
       stack,
