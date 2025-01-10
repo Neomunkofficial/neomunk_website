@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
+    <style>
+        /* Manual hover effect for <a> tags */
+        a.tag {
+            color: black;
+            font-weight: bold;
+            font-size: 1.25rem; /* Equivalent to text-lg */
+            text-decoration: none;
+            transition: transform 0.3s ease, text-decoration 0.3s ease;
+            font-family: '"Inter"', 'sans-serif';
+        }
+        a.tag:hover {
+            text-decoration: underline;
+            transform: scale(0.95); /* Equivalent to hover:scale-95 */
+        }
+
+        /* Adding style for the navigation bar effect */
+        #effect {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(to top, #d1d5db, #d1d5db);
+            opacity: 0.75;
+            margin-top: -1px;
+        }
+        #nav {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            height: 80px; /* Increased height for more visibility */
+            background: transparent ; /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Blur effect for the content behind the navbar */
+            transition: background-color 0.3s ease, height 0.3s ease; /* Smooth transition for bg color and height */
+        }
+
+        #main{
+            background-color: #f0f3f4;
+        }
+        #heading-div {
+    padding-bottom: 180px;
+    font-size: xx-large;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    padding-left: 50px;
+}
+
+h2 {
+    font-size: large;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    padding-left: 50px;
+    margin-bottom: 160px;
+    margin-top: 110px; /* Add a large gap below h2 */
+}
+
+p {
+    font-size:x-large;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+  
+    
+     
+}
+
+
+h4 {
+    font-size: medium;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    padding-left: 50px;
+    margin-bottom: 20px; /* Add a smaller gap below h4 */
+}
+
+#smaller {
+    font-size: large;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    word-spacing: 10px;
+    margin-left: -10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 50px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px; 
+    border: 2px solid transparent; 
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    
+    margin-top: 40px;
+}
+
+.btn:hover {
+    text-decoration: underline;
+    background-color: white;
+    color: black;
+    border-color: black; /* Change border color to black on hover */
+    transform: scale(1.05);
+}
+
+#page2{
+   min-height: 30vh;
+    width:100%;
+    z-index: 10;
+    background-color: white !important;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position:relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+display:inline-block;
+animation-name: scroll;
+animation-duration: 25s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+
+
+
+#scroller h4{
+display: inline-block;
+font-size: 120px;
+font-weight: 400;
+font-family: '"Inter"', 'sans-serif';
+margin-right: 10px;
+transition: all linear 0.5s;
+-webkit-text-stroke: 2px grey;
+color:grey;
+}
+
+
+
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+span{
+    color:black
+}
+
+
+#video {
+    width: 80vw; 
+    height: 85vh; 
+    overflow: hidden;
+    position: relative;
+    padding-right: 1rem; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+
+#video .video-element {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    position: relative;
+}
+
+
+
+   
+    .overlay-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    pointer-events: none; /* Prevent blocking video interactions */
+}
+
+.overlay-left,
+.overlay-right {
+    width: 48%;
+    color: black;
+    padding: 500px 10px 20px; /* Increase top padding and reduce bottom padding */
+    text-align: center;
+    pointer-events: auto; /* Allow interaction */
+    border-radius: 5px;
+    font-family:'"Inter"', 'sans-serif' ;
+    font-weight: 500;
+    font-size:large;
+   
+    
+}
+
+#cursor{
+height:15px;
+width:15px;
+background-color: black;
+border-radius: 50%;
+z-index: 99;
+position: fixed;
+z-index: 9;
+}
+
+#page3title {
+    font-size: 5rem; /* Adjust the size as per your preference */
+    font-family: '"Exo 2"', 'sans-serif';
+    font-weight: 700;
+    text-align: center; /* Optional: Center align the heading */
+    margin-top: 50px; /* Optional: Add spacing above the heading */
+}
+
+#page3des{
+    display: flex;
+}
+
+#team {
+    display: inline-block;
+    padding: 12px 50px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px; 
+    border: 2px solid transparent; 
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    
+    margin-top: 40px;
+}
+
+#team:hover {
+    text-decoration: underline;
+    background-color: white;
+    color: black;
+    border-color: black; /* Change border color to black on hover */
+    transform: scale(1.05);
+}
+
+
+#page3 {
+    background-color: white !important; /* Ensure white background overrides any other styles */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+
+#grey{
+    color: grey;
+}
+
+#describe{
+    margin-left: 90px;
+}
+</style>
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div id="nav" class="h-[60px] w-full flex items-center bg-transparent fixed top-0 left-0 right-0  shadow-md">
+        <div id="left" class="w-2/3 flex items-center justify-start gap-[40px]">
+            <img src="/assets/trans.png" alt="Company Logo" class="w-[200px] h-[130px]" />
+            <a class="tag" href="/contact" class="hover-effect">Contact</a>
+            <a  class="tag"href="/about" class="hover-effect">About us</a>
+            <a  class="tag" href="/services" class="hover-effect">Services</a>
+        </div>
+    </div>
+    <!-- Divider effect below navigation -->
+    <div id="effect"></div>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+    <div id="main" class=" min-h-[calc(100vh-70px)] z-10  ">
+      <div id="page1"class="w-full h-[500px] flex flex-col lg:flex-row justify-between  items-center z-10"> <!-- Reduced height -->
+            <div id="main-sub" class="w-full lg:w-[400px] h-[500px] overflow:hidden mt-16">
+            
+                    <h2 class>Software and AI solution Providers</h2>
+
+                <div id="heading-div"  >
+                    <h1 id="smaller">INNOVATION   AT  EVERY  TURN</h1>
+                    <h1 >We provide successful</h1>
+                    <h1>implementation strategy of</h1>
+                    <h1 >software development solutions</h1>
+                    <h1>and innovative solutions for any</h1>
+                    <h1 >challenges you face</h1>
+                    <a href="#" class="btn">Get Started</a> 
+                </div>
+               
+            </div>
+<div id="video" class="video-container">
+    <video autoplay loop muted class="video-element">
+        <source src="/assets/f6.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-container">
+        <div class="overlay-left">
+            <a href="#" class="hover-effect">
+                <p>Scroll</p>
+                <p>to explore</p>
+            </a>
+        </div>
+        <div class="overlay-right">
+            <p>We provide automation</p>
+            <p>within a few delays</p>
+        </div>
+    </div>
+</div>
+</div>
+            <div id="page2" class="z-10" >
+                <div id="scroller">
+                    <div id="scroller-in">
+                        <h4>INNOVATION AT EVERY <span>TURN</span>-</h4>
+                        <h4>INNOVATION AT EVERY <span>TURN</span>-</h4>
+                        <h4>INNOVATION AT EVERY <span>TURN</span>-</h4>
+                        <h4>INNOVATION AT EVERY <span>TURN</span></h4>
+                    </div>
+        </div>
+    </div>
+    <div id="page3" >
+        <h1 id="page3title">ABOUT US</h1>
+        <div id="page3des" style="display: flex; flex-wrap: wrap; align-items:center; justify-content:space-between; gap: 40px; padding: 20px;  ">
+            <!-- Video Section -->
+            <div id="video2" style="flex: 1; min-width: 300px; max-width: 400px; display: flex; justify-content: center; align-items:start; ">
+                <video autoplay loop muted style="width: 100%; height: auto; border-radius: 10px; object-fit: contain;">
+                    <source src="/assets/helix.mp4" type="video/mp4">
+                </video>
+            </div>
+    
+            <!-- Description Section -->
+            <div id="describe" style="flex: 1; min-width: 600px; max-width: 1000px; font-family: 'Exo 2', sans-serif; text-align: left; padding: 10px;  ">
+                <p style="font-size: 2.5rem;">InfosysDevOps is a team of professionals</p>
+                <p style="font-size: 2.5rem;">with over 8+ years demonstrated competence</p>
+                <p style="font-size: 2.5rem;">in IT, <span id="grey">focuses</span> on delivering integrated, reliable,</p>
+                <p style="font-size: 2.5rem;">resilient and cost-effective solutions and</p>
+                <p style="font-size: 2.5rem;"><span id="grey">regards</span> it as a privilege to ensure 100%</p>
+                <p style="font-size: 2.5rem;">customer satisfaction.</p>
+                <a href="#" id="team">Get Started</a> 
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./cursor.js"></script>
+</body>
+</html>
